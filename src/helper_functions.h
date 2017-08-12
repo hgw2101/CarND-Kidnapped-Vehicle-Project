@@ -236,4 +236,10 @@ inline bool read_landmark_data(std::string filename, std::vector<LandmarkObs>& o
 	return true;
 }
 
+inline double generate_random_gaussian_value(double mean, double std) {
+	default_random_engine gen; //random number generator
+	normal_distribution<double> dist(mean, std);
+	return dist(gen);
+}
+
 #endif /* HELPER_FUNCTIONS_H_ */

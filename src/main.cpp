@@ -64,15 +64,16 @@ int main()
         if (event == "telemetry") {
           // j[1] is the data JSON object
 
-
           if (!pf.initialized()) {
 
-          	// Sense noisy position data from the simulator
-          double sense_x = std::stod(j[1]["sense_x"].get<std::string>());
-          double sense_y = std::stod(j[1]["sense_y"].get<std::string>());
-          double sense_theta = std::stod(j[1]["sense_theta"].get<std::string>());
+            cout<<"pf not initialized!"<<endl;
 
-          pf.init(sense_x, sense_y, sense_theta, sigma_pos);
+          	// Sense noisy position data from the simulator
+            double sense_x = std::stod(j[1]["sense_x"].get<std::string>());
+            double sense_y = std::stod(j[1]["sense_y"].get<std::string>());
+            double sense_theta = std::stod(j[1]["sense_theta"].get<std::string>());
+
+            pf.init(sense_x, sense_y, sense_theta, sigma_pos);
 		  }
 		  else {
         // Predict the vehicle's next state from previous (noiseless control) data.

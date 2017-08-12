@@ -18,9 +18,9 @@ struct Particle {
 	double y;
 	double theta;
 	double weight;
-	std::vector<int> associations;
-	std::vector<double> sense_x;
-	std::vector<double> sense_y;
+	std::vector<int> associations; //sensed landmark ID
+	std::vector<double> sense_x; //sensed landmark x, in map coordinates
+	std::vector<double> sense_y; //sensed landmark y, in map coordinates
 };
 
 

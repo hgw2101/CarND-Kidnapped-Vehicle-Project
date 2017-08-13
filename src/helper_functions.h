@@ -8,11 +8,15 @@
 #ifndef HELPER_FUNCTIONS_H_
 #define HELPER_FUNCTIONS_H_
 
+#include <random>
+#include <iostream>
 #include <sstream>
 #include <fstream>
 #include <math.h>
 #include <vector>
 #include "map.h"
+
+using namespace std;
 
 /*
  * Struct representing one position/control measurement.
@@ -236,10 +240,13 @@ inline bool read_landmark_data(std::string filename, std::vector<LandmarkObs>& o
 	return true;
 }
 
+// for whatever reason, a helper method here doesn't return random value, instead just the mean value
+// not used for now
+/*
 inline double generate_random_gaussian_value(double mean, double std) {
 	default_random_engine gen; //random number generator
 	normal_distribution<double> dist(mean, std);
 	return dist(gen);
 }
-
+*/
 #endif /* HELPER_FUNCTIONS_H_ */
